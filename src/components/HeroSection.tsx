@@ -18,11 +18,11 @@ const HeroSection = () => {
             key={i} 
             className="h-full"
             style={{
-              background: 'rgba(217, 217, 217, 0.04)',
-              borderLeft: i === 0 || i === 1 
+              background: 'rgba(217, 217, 217, 0.04)', // #D9D9D9 at 4%
+              borderLeft: i === 0 
                 ? '1px solid rgba(255, 255, 255, 0.05)' 
                 : '1px solid rgba(255, 255, 255, 0.15)',
-              borderRight: i === 5 || i === 4
+              borderRight: i === 5
                 ? '1px solid rgba(255, 255, 255, 0.05)'
                 : '1px solid rgba(255, 255, 255, 0.15)',
             }}
