@@ -11,16 +11,20 @@ const HeroSection = () => {
         />
       </div>
       
-      {/* Vertical column lines with varying opacity */}
-      <div className="pointer-events-none absolute inset-0 flex justify-between px-[120px]">
+      {/* 6 grid columns with borders */}
+      <div className="pointer-events-none absolute inset-y-0 left-[120px] right-[120px] grid grid-cols-6">
         {[...Array(6)].map((_, i) => (
           <div 
             key={i} 
-            className="h-full w-px"
+            className="h-full"
             style={{
-              backgroundColor: i === 0 || i === 5 
-                ? 'rgba(255, 255, 255, 0.05)' 
-                : 'rgba(255, 255, 255, 0.15)'
+              background: 'rgba(217, 217, 217, 0.04)',
+              borderLeft: i === 0 || i === 1 
+                ? '1px solid rgba(255, 255, 255, 0.05)' 
+                : '1px solid rgba(255, 255, 255, 0.15)',
+              borderRight: i === 5 || i === 4
+                ? '1px solid rgba(255, 255, 255, 0.05)'
+                : '1px solid rgba(255, 255, 255, 0.15)',
             }}
           />
         ))}
