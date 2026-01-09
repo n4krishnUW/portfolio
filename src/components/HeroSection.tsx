@@ -9,12 +9,17 @@ const HeroSection = () => {
         }}
       />
       
-      {/* Vertical column lines */}
+      {/* Vertical column lines with varying opacity */}
       <div className="pointer-events-none absolute inset-0 flex justify-between px-[120px]">
         {[...Array(6)].map((_, i) => (
           <div 
             key={i} 
-            className="h-full w-px bg-border/30"
+            className="h-full w-px"
+            style={{
+              backgroundColor: i === 0 || i === 5 
+                ? 'rgba(255, 255, 255, 0.05)' 
+                : 'rgba(255, 255, 255, 0.15)'
+            }}
           />
         ))}
       </div>
