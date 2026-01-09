@@ -13,21 +13,22 @@ const HeroSection = () => {
       
       {/* 6 grid columns with borders */}
       <div className="pointer-events-none absolute inset-y-0 left-[120px] right-[120px] grid grid-cols-6">
-        {[...Array(6)].map((_, i) => (
-          <div 
-            key={i} 
-            className="h-full"
-            style={{
-              background: 'rgba(217, 217, 217, 0.04)', // #D9D9D9 at 4%
-              borderLeft: i === 0 
-                ? '1px solid rgba(255, 255, 255, 0.05)' 
-                : '1px solid rgba(255, 255, 255, 0.15)',
-              borderRight: i === 5
-                ? '1px solid rgba(255, 255, 255, 0.05)'
-                : '1px solid rgba(255, 255, 255, 0.15)',
-            }}
-          />
-        ))}
+        {[...Array(6)].map((_, i) => {
+          const isOuter = i === 0 || i === 5;
+          const borderColor = isOuter 
+            ? 'rgba(255, 255, 255, 0.05)' 
+            : 'rgba(255, 255, 255, 0.15)';
+          return (
+            <div 
+              key={i} 
+              className="h-full"
+              style={{
+                background: 'rgba(217, 217, 217, 0.04)', // #D9D9D9 at 4%
+                border: `1px solid ${borderColor}`,
+              }}
+            />
+          );
+        })}
       </div>
 
       {/* Content container */}
