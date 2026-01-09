@@ -1,13 +1,15 @@
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-background">
-      {/* Animated radial gradient */}
-      <div 
-        className="pointer-events-none absolute inset-0 animate-gradient-drift"
-        style={{
-          background: `radial-gradient(ellipse 80% 60% at 40% 50%, hsl(258 90% 50% / 0.5) 0%, transparent 70%)`,
-        }}
-      />
+      {/* Animated radial gradient - constrained within grid margins */}
+      <div className="pointer-events-none absolute inset-y-0 left-[120px] right-[120px] overflow-hidden">
+        <div 
+          className="absolute inset-0 animate-gradient-drift"
+          style={{
+            background: `radial-gradient(ellipse 42% 56% at 44% 47%, hsl(258 90% 50% / 0.5) 0%, transparent 100%)`,
+          }}
+        />
+      </div>
       
       {/* Vertical column lines with varying opacity */}
       <div className="pointer-events-none absolute inset-0 flex justify-between px-[120px]">
