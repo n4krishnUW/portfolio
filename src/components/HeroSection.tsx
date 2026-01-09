@@ -35,21 +35,21 @@ const HeroSection = () => {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col px-[120px]">
         {/* Navigation */}
         <nav className="flex items-center justify-between py-8">
-          <span className="text-[40px] font-medium text-white">Naveena</span>
+          <span className="text-xl font-semibold text-foreground">Naveena</span>
           <div className="flex items-center gap-12">
-            <a href="#work" className="text-[24px] font-normal text-white transition-opacity hover:opacity-80">Work</a>
-            <a href="#play" className="text-[24px] font-normal text-white transition-opacity hover:opacity-80">Play</a>
-            <a href="#about" className="text-[24px] font-normal text-white transition-opacity hover:opacity-80">About</a>
+            <a href="#work" className="text-foreground/90 transition-colors hover:text-foreground">Work</a>
+            <a href="#play" className="text-foreground/90 transition-colors hover:text-foreground">Play</a>
+            <a href="#about" className="text-foreground/90 transition-colors hover:text-foreground">About</a>
           </div>
         </nav>
 
         {/* Hero content */}
         <div className="flex flex-1 flex-col justify-center pb-32">
-          <span className="mb-4 text-[32px] font-normal text-white">Product Designer</span>
-          <h1 className="mb-8 text-[96px] font-normal leading-[1.1] tracking-tight text-white">
+          <span className="mb-4 text-lg text-muted-foreground">Product Designer</span>
+          <h1 className="mb-8 text-[80px] font-light leading-[1.1] tracking-tight text-foreground">
             Hi, I'm Naveena
           </h1>
-          <p className="max-w-[600px] text-[32px] font-light leading-relaxed text-white">
+          <p className="max-w-[600px] text-xl leading-relaxed text-muted-foreground">
             I'm a UX designer bridging business goals and user needs to create experiences that resonate. I design with curiosity, empathy, and an eye for clarity.
           </p>
         </div>
