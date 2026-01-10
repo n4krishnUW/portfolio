@@ -12,7 +12,7 @@ const HeroSection = () => {
       </div>
       
       {/* 6 grid columns with borders */}
-      <div className="pointer-events-none absolute inset-y-0 left-[120px] right-[120px] grid grid-cols-6">
+      <div className="pointer-events-none absolute inset-y-0 left-[120px] right-[120px] grid grid-cols-6 gap-5">
         {[...Array(6)].map((_, i) => {
           const isOuter = i === 0 || i === 5;
           const borderColor = isOuter 
