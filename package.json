@@ -10,7 +10,6 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
-}
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
