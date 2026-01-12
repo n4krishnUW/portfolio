@@ -1,8 +1,8 @@
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-background">
+    <section className="relative min-h-[100svh] w-full overflow-hidden bg-background">
       {/* Animated radial gradient - constrained within grid margins */}
-      <div className="pointer-events-none absolute inset-y-0 left-[120px] right-[120px] overflow-hidden">
+      <div className="pointer-events-none absolute inset-y-0 left-4 right-4 overflow-hidden md:left-[120px] md:right-[120px]">
         <div 
           className="absolute inset-0 animate-gradient-drift"
           style={{
@@ -11,8 +11,8 @@ const HeroSection = () => {
         />
       </div>
       
-      {/* 6 grid columns with borders */}
-      <div className="pointer-events-none absolute inset-y-0 left-[120px] right-[120px] grid grid-cols-6 gap-5">
+      {/* 6 grid columns with borders - responsive */}
+      <div className="pointer-events-none absolute inset-y-0 left-4 right-4 grid grid-cols-2 gap-5 md:left-[120px] md:right-[120px] md:grid-cols-6">
         {[...Array(6)].map((_, i) => {
           const isOuter = i === 0 || i === 5;
           const borderColor = isOuter 
@@ -21,9 +21,9 @@ const HeroSection = () => {
           return (
             <div 
               key={i} 
-              className="h-full"
+              className={`h-full ${i >= 2 ? 'hidden md:block' : ''}`}
               style={{
-                background: 'rgba(217, 217, 217, 0.04)', // #D9D9D9 at 4%
+                background: 'rgba(217, 217, 217, 0.04)',
                 border: `1px solid ${borderColor}`,
               }}
             />
@@ -32,24 +32,24 @@ const HeroSection = () => {
       </div>
 
       {/* Content container */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col px-[120px]">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col px-4 md:px-[120px]">
         {/* Navigation */}
-        <nav className="flex items-center justify-between py-8">
-          <span className="text-xl font-semibold text-foreground">Naveena</span>
-          <div className="flex items-center gap-12">
-            <a href="#work" className="text-foreground/90 transition-colors hover:text-foreground">Work</a>
-            <a href="#play" className="text-foreground/90 transition-colors hover:text-foreground">Play</a>
-            <a href="#about" className="text-foreground/90 transition-colors hover:text-foreground">About</a>
+        <nav className="flex items-center justify-between py-6 md:py-8">
+          <span className="text-lg font-semibold text-foreground md:text-xl">Naveena</span>
+          <div className="flex items-center gap-6 md:gap-12">
+            <a href="#work" className="text-sm text-foreground/90 transition-colors hover:text-foreground md:text-base">Work</a>
+            <a href="#play" className="text-sm text-foreground/90 transition-colors hover:text-foreground md:text-base">Play</a>
+            <a href="#about" className="text-sm text-foreground/90 transition-colors hover:text-foreground md:text-base">About</a>
           </div>
         </nav>
 
         {/* Hero content */}
-        <div className="flex flex-1 flex-col justify-center pb-32">
-          <span className="mb-4 text-lg text-muted-foreground">Product Designer</span>
-          <h1 className="mb-8 text-[80px] font-light leading-[1.1] tracking-tight text-foreground">
+        <div className="flex flex-1 flex-col justify-center pb-16 md:pb-32">
+          <span className="mb-3 text-base text-muted-foreground md:mb-4 md:text-lg">Product Designer</span>
+          <h1 className="mb-6 text-4xl font-light leading-[1.1] tracking-tight text-foreground sm:text-5xl md:mb-8 md:text-6xl lg:text-[80px]">
             Hi, I'm Naveena
           </h1>
-          <p className="max-w-[600px] text-xl leading-relaxed text-muted-foreground">
+          <p className="max-w-[600px] text-base leading-relaxed text-muted-foreground md:text-xl">
             I'm a UX designer bridging business goals and user needs to create experiences that resonate. I design with curiosity, empathy, and an eye for clarity.
           </p>
         </div>
