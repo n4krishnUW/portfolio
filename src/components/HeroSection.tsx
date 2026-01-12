@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden bg-background">
@@ -15,9 +17,9 @@ const HeroSection = () => {
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col px-4 md:px-[120px]">
         {/* Navigation */}
         <nav className="flex items-center justify-between py-6 md:py-8">
-          <span className="text-lg font-semibold text-foreground md:text-xl">Naveena</span>
+          <Link to="/" className="text-lg font-semibold text-foreground md:text-xl">Naveena</Link>
           <div className="flex items-center gap-6 md:gap-12">
-            <a href="#work" className="text-sm text-foreground/90 transition-colors hover:text-foreground md:text-base">Work</a>
+            <Link to="/work" className="text-sm text-foreground/90 transition-colors hover:text-foreground md:text-base">Work</Link>
             <a href="#play" className="text-sm text-foreground/90 transition-colors hover:text-foreground md:text-base">Play</a>
             <a href="#about" className="text-sm text-foreground/90 transition-colors hover:text-foreground md:text-base">About</a>
           </div>
