@@ -1,57 +1,55 @@
-import ProjectCard from "./ProjectCard";
-
 const FeaturedSection = () => {
-  const projects = [
-    {
-      title: "DiabetesPath",
-      description: "Turning day 0 overwhelm into a 30 day actionable plan to make life with diabetes manageable and less overwhelming.",
-      tags: ["HEALTHCARE", "PRODUCT DESIGN", "INSURANCE"],
-      type: "Case Study",
-    },
-    {
-      title: "Naveena",
-      description: "Turning day 0 overwhelm into a 30 day actionable plan to make life with diabetes manageable and less overwhelming.",
-      tags: ["HEALTHCARE", "UX DESIGN", "INSURANCE"],
-      type: "Case Study",
-    },
-  ];
-
   return (
-    <section id="work" className="relative w-full bg-background py-16 md:py-24">
-      {/* Grid overlay - same as hero */}
-      <div className="pointer-events-none absolute inset-y-0 left-4 right-4 grid grid-cols-2 gap-5 md:left-[120px] md:right-[120px] md:grid-cols-6">
-        {[...Array(6)].map((_, i) => {
-          const isOuter = i === 0 || i === 5;
-          const borderColor = isOuter 
-            ? 'rgba(255, 255, 255, 0.05)' 
-            : 'rgba(255, 255, 255, 0.15)';
-          return (
-            <div 
-              key={i} 
-              className={`h-full ${i >= 2 && i <= 3 ? 'hidden md:block' : ''} ${i >= 4 ? 'hidden md:block' : ''}`}
-              style={{
-                background: 'rgba(217, 217, 217, 0.04)',
-                border: `1px solid ${borderColor}`,
-              }}
-            />
-          );
-        })}
-      </div>
-
+    <section id="work" className="relative w-full bg-background">
       <div className="relative z-10 mx-auto max-w-[1400px] px-4 md:px-[120px]">
-        <h2 className="mb-12 text-lg text-muted-foreground md:mb-16">Featured</h2>
+        {/* Featured heading */}
+        <h2 className="py-8 text-4xl font-light tracking-tight text-foreground md:py-12 md:text-5xl lg:text-6xl">
+          Featured
+        </h2>
         
-        <div className="grid gap-6 md:grid-cols-2 md:gap-8">
-          {projects.map((project, i) => (
-            <ProjectCard
-              key={i}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              type={project.type}
-            />
-          ))}
+        {/* Horizontal divider */}
+        <div className="h-px w-full bg-white/15" />
+        
+        {/* Featured project card - full width grid layout */}
+        <div className="grid grid-cols-1 md:grid-cols-6 md:gap-5">
+          {/* Project image - spans 3 columns */}
+          <div className="col-span-1 md:col-span-3">
+            <div className="aspect-[4/3] w-full bg-muted/30 md:aspect-auto md:h-full">
+              {/* Placeholder for project image */}
+              <div className="flex h-full min-h-[300px] w-full items-center justify-center bg-muted/20">
+                <span className="text-sm text-muted-foreground">Project Image</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Project content - spans 3 columns */}
+          <div className="col-span-1 flex flex-col py-6 md:col-span-3 md:py-8">
+            {/* Title */}
+            <h3 className="mb-auto text-xl font-normal text-foreground md:text-2xl">
+              DiabetesPath
+            </h3>
+            
+            {/* Description */}
+            <p className="mb-8 mt-8 text-base leading-relaxed text-foreground md:mt-auto md:text-lg">
+              Turning day 0 overwhelm into a 30 day actionable plan to make life with diabetes manageable and less overwhelming.
+            </p>
+            
+            {/* Type and Tags row */}
+            <div className="flex flex-col gap-4 border-t border-white/15 pt-4 md:flex-row md:items-center md:justify-between">
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                TYPE:
+              </span>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                  HEALTHCARE, PRODUCT DESIGN, INSURANCE
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
+        
+        {/* Bottom divider */}
+        <div className="h-px w-full bg-white/15" />
       </div>
     </section>
   );
